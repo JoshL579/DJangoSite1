@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
+mongoengine = "*"
+dnspython = "*"
+djongo = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
