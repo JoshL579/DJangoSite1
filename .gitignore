@@ -1,1 +1,19 @@
+# PyCharm
 .idea
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# python stuff
+__pycache__/
+instance/
+.webassets-cache
+
+# .env
+.env
+./server/.env
+./client/.env
