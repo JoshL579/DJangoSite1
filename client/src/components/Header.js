@@ -5,10 +5,16 @@ import {
     Toolbar,
     IconButton,
     Typography,
-    Link
+    Link,
+    Grid,
+    SvgIcon
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { theme } from '../theme/theme';
+import { UserIcon } from '../utils/Icons';
+import SearchIcon from '@material-ui/icons/Search';
+import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
+import PermIdentityOutlinedIcon from '@material-ui/icons/PermIdentityOutlined';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             textDecoration: 'none',
         }
+    },
+    navRightIcons: {
+        marginLeft: 'auto'
     }
 }))
 
@@ -52,13 +61,33 @@ export default function Header(props) {
         <AppBar position="sticky" style={props.style}
             className={classes.container}>
             <Toolbar>
-                <IconButton>
-                    <img src="https://cdn.shopify.com/s/files/1/0519/0542/9670/files/Ms_0d861bc7-9edb-4ab4-a0a2-7b3e96441403_100x.png?v=1614795317" alt="logo"/>
-                </IconButton>
-                <NavLink text='Home' />
-                <NavLink text='Story Bouquet (Faux Flower)' />
-                <NavLink text='Bespoke Flower Arrangement' />
-                <NavLink text='About Us' />
+                <Grid container
+                    direction="row"
+                    justify="flex-start"
+                    alignItems="center">
+                    <Grid item>
+                        <IconButton>
+                            <img src="https://cdn.shopify.com/s/files/1/0519/0542/9670/files/Ms_0d861bc7-9edb-4ab4-a0a2-7b3e96441403_100x.png?v=1614795317" alt="logo" />
+                        </IconButton>
+                    </Grid>
+                    <Grid item>
+                        <NavLink text='Home' />
+                        <NavLink text='Story Bouquet (Faux Flower)' />
+                        <NavLink text='Bespoke Flower Arrangement' />
+                        <NavLink text='About Us' />
+                    </Grid>
+                    <Grid item className={classes.navRightIcons}>
+                        <IconButton>
+                            <PermIdentityOutlinedIcon />
+                        </IconButton>
+                        <IconButton>
+                            <SearchIcon />
+                        </IconButton>
+                        <IconButton>
+                            <LocalMallOutlinedIcon />
+                        </IconButton>
+                    </Grid>
+                </Grid>
             </Toolbar>
         </AppBar>
     )
